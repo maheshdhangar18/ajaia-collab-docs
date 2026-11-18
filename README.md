@@ -54,39 +54,35 @@ Switch between these accounts via the top-right account switcher in the app head
 - Node.js v20+ or v24+
 - npm v10+
 
-### Option A: Run Backend & Frontend in Development Mode
+### Option A: Quickest Run (Root Single Command)
+
+From the root directory, simply run:
+```bash
+# 1. Install dependencies
+npm run install:all
+
+# 2. Build & run production server (serves both API & Frontend on http://localhost:5000)
+npm run dev
+# OR: npm start
+```
+Open **[http://localhost:5000](http://localhost:5000)** in your browser!
+
+---
+
+### Option B: Development Mode (Vite HMR + Express Backend)
 
 ```bash
-# 1. Install & start backend (runs on http://localhost:5000)
+# Terminal 1 - Backend API (http://localhost:5000)
 cd server
 npm install
 npm run dev
 
-# 2. In a second terminal, install & start frontend (runs on http://localhost:5173)
+# Terminal 2 - Frontend with Instant Hot Reload (http://localhost:5173)
 cd client
 npm install
 npm run dev
 ```
-Open **[http://localhost:5173](http://localhost:5173)** in your browser. Vite automatically proxies `/api` requests to the backend server at port 5000.
-
----
-
-### Option B: Single-Server Production Mode
-
-The backend can serve the compiled Vite static build directly from `client/dist`:
-
-```bash
-# 1. Build frontend bundle
-cd client
-npm install
-npm run build
-
-# 2. Start server
-cd ../server
-npm install
-npm start
-```
-Open **[http://localhost:5000](http://localhost:5000)** in your browser. The entire application runs from a single unified server!
+Open **[http://localhost:5173](http://localhost:5173)** in your browser. Vite automatically proxies all `/api` requests to the Express server on port 5000.
 
 ---
 
