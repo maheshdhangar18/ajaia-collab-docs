@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# SQLite Database (auto-generated & seeded on first run)
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

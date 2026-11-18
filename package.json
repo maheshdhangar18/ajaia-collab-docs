@@ -1,0 +1,16 @@
+﻿{
+  "name": "ajaia-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lightweight collaborative document editor inspired by Google Docs and Linear",
+  "scripts": {
+    "start": "node server/src/index.js",
+    "dev": "npm run build:client && node server/src/index.js",
+    "build": "cd client && npm run build",
+    "build:client": "cd client && npm run build",
+    "test": "cd server && npm test",
+    "install:all": "npm --prefix server install && npm --prefix client install"
+  },
+  "author": "Mahesh Dhangar <dhanagarmahesh05@gmail.com>",
+  "license": "ISC"
+}
